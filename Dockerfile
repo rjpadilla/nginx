@@ -7,7 +7,6 @@ LABEL org.opencontainers.image.maintainer="vmnet8 <vmnet8@ole.org>" \
       org.opencontainers.image.licenses="AGPL v3.0" \
       org.opencontainers.image.url="https://hub.docker.com/r/treehouses/nginx/" \
       org.opencontainers.image.source="https://github.com/treehouses/nginx"
-
 #ENV NGINX_VERSION 1.16
 
 RUN apk --no-cache add nginx \
