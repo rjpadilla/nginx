@@ -104,6 +104,9 @@ build_image(){
       sed "s|{{base_image}}|$base_image|g" Dockerfile.template > Dockerfile.$arch
       docker build -t $tag -f Dockerfile.$arch .
     fi
+  else
+    echo $tag_repo-tags:$arch
+    docker pull $tag_repo-tags:$arch
   fi
 }
 
