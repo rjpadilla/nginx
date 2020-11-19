@@ -36,6 +36,7 @@ script:
 - build_image "treehouses/alpine:latest" arm64 "treehouses/nginx" #base image is arm64 arch
 - flag=$(compare "treehouses/alpine@"$alpine_arm_sha "treehouses/nginx@"$nginx_arm_sha "treehouses/alpine@"$alpine_amd64_sha "treehouses/nginx@"$nginx_amd64_sha "treehouses/alpine@"$alpine_arm64_sha "treehouses/nginx@"$nginx_arm64_sha "treehouses/nginx:latest" "treehouses/nginx-tags:amd64")
 - echo $flag
+- flag=False
 before_deploy:
 - deploy_image "treehouses/nginx" arm
 - deploy_image "treehouses/nginx" amd64

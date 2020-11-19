@@ -94,7 +94,7 @@ build_image(){
     echo "missing parameters."
     exit 1
   fi
-  if [ $4 -nq "True" ]; then
+  if [ $4 -ne "True" ]; then
     break
   else
     sha=$(get_manifest_sha $@)
