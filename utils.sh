@@ -94,7 +94,7 @@ build_image(){
     echo "missing parameters."
     exit 1
   fi
-  if [ $4 = "true" ]; then
+  if [ $4 = "false" ]; then
     sha=$(get_manifest_sha $@)
     echo $sha
     base_image="$repo@$sha"
