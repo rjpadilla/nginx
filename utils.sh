@@ -94,7 +94,7 @@ build_image(){
     echo "missing parameters."
     exit 1
   fi
-  if not flag;then
+  if not flag; then
     break
   else
     sha=$(get_manifest_sha $@)
@@ -105,6 +105,7 @@ build_image(){
       tag=$tag_repo-tags:$arch
       sed "s|{{base_image}}|$base_image|g" Dockerfile.template > Dockerfile.$arch
       docker build -t $tag -f Dockerfile.$arch .
+    fi
   fi
 }
 
